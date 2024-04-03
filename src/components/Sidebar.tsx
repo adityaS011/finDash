@@ -1,9 +1,26 @@
-// Sidebar.tsx
-
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faHistory, faMoneyBillWave, faAddressBook, faHandHoldingUsd, faCog, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.png';
+
+
+interface MenuItem {
+  icon: IconDefinition;
+  label: string;
+}
+
+
+const menuItems: MenuItem[] = [
+  { icon: faHome, label: 'HeadsUp' },
+  { icon: faHistory, label: 'Timelines' },
+  { icon: faMoneyBillWave, label: 'Pay' },
+  { icon: faAddressBook, label: 'Directory' },
+  { icon: faHandHoldingUsd, label: 'Get Paid' },
+  { icon: faHandHoldingUsd, label: 'Financials' },
+  { icon: faHandHoldingUsd, label: 'Files' },
+  { icon: faCog, label: 'Settings' },
+];
 
 const Sidebar: React.FC = () => {
   return (
@@ -13,37 +30,19 @@ const Sidebar: React.FC = () => {
         <img src={logo} alt="Fintech Logo" />
       </div>
 
+      
       <ul className="space-y-2 pt-4 text-md px-2">
-        <li>
-          <FontAwesomeIcon icon={faHome} className="mr-2" /> HeadsUp
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faHistory} className="mr-2 pt-4" /> Timelines
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faMoneyBillWave} className="mr-2 pt-4" /> Pay
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faAddressBook} className="mr-2 pt-4" /> Directory
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faHandHoldingUsd} className="mr-2 pt-4" /> Get Paid
-        </li>
-        <hr className='h-0.5 bg-slate-300' />
-        <li>
-          <FontAwesomeIcon icon={faHandHoldingUsd} className="mr-2 pt-3" /> Financials
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faHandHoldingUsd} className="mr-2 pt-4" /> Files
-        </li>
-        
-        <li>
-          <FontAwesomeIcon icon={faCog} className="mr-2 pt-3" /> Settings
-        </li>
-        <hr />
+        {menuItems.map((item, index) => (
+          <li key={index}>
+            <FontAwesomeIcon icon={item.icon} className="mr-2" /> {item.label}
+          </li>
+        ))}
       </ul>
 
-      {/* Get Help button */}
+   
+      <hr className='h-0.5 bg-slate-300' />
+
+     
       <button className="bg-black text-white font-semibold p-2 m-4 rounded-l-full rounded-br-full absolute bottom-0 left-0">
         <FontAwesomeIcon icon={faExclamationCircle} className="mr-2" />
         Get Help
