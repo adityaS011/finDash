@@ -33,7 +33,7 @@ const Sidebar: React.FC = () => {
       
       <ul className="space-y-2 pt-4  text-md px-2">
         {menuItems.map((item, index) => (
-          <li key={index} className='py-3'>
+          <li key={index} className='py-2'>
             <FontAwesomeIcon icon={item.icon} className="mr-2" /> {item.label}
           </li>
         ))}
