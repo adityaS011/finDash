@@ -116,7 +116,7 @@ const IncomeChart: React.FC<Props> = ({ financialData }) => {
     if (tooltipPosition) {
       return (
         <div
-          className="absolute w-24  bg-black text-white border border-gray-200 p-2 rounded-r-lg rounded-bl-xl"
+          className="absolute w-24 z-50 bg-black text-white border border-gray-200 p-2 rounded-r-lg rounded-bl-xl"
           style={{ top: tooltipPosition.y + 10, left: tooltipPosition.x + 10 }}
         >
         
