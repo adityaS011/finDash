@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faArrowUp, faArrowDown, faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faArrowUp, faArrowDown, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import userImage from '../../../assets/user.png';
 import { Account } from '../../mockdata';
 
