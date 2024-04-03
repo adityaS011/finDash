@@ -26,7 +26,7 @@ const IncomeChart: React.FC<Props> = ({ financialData }) => {
             // @ts-ignore
             labels: financialData.map(data => ''), 
             datasets: [{
-              data: financialData.map(data => data.value),
+              data: [...financialData.map(data => data.value), financialData[financialData.length - 1].value], 
               fill: {
                 target: 'start',
                 above: 'rgb(96, 195, 90, 0.4)' 
@@ -34,7 +34,9 @@ const IncomeChart: React.FC<Props> = ({ financialData }) => {
               borderColor: 'rgb(96, 195, 90)',
               borderWidth: 3,
               tension: 0.2, 
-              pointRadius: 0 
+              pointRadius: (context) => context.dataIndex === financialData.length - 1 ? 4 : 0, 
+              pointBackgroundColor: 'rgb(96, 195, 90)', // Set point background color
+              pointStyle:  'circle', 
             }]
           },
           options: {
