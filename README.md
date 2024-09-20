@@ -1,67 +1,36 @@
-# Dashboard Project
-
-Welcome to the Dashboard Project! This project aims to provide users with a comprehensive overview of their financial data and account information through an intuitive and visually appealing dashboard interface.
-
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Mock Data](#mock-data)
-- [Contributors](#contributors)
-- [License](#license)
-
-## Features
-
-- **User Account Management:**
-  - View a list of user accounts along with their respective bank balances.
-  - Easily expand and collapse individual accounts to access more detailed information.
-
-- **Income Visualization:**
-  - Visualize income-related data such as sales, fees billed, design income, and other sources.
-  - Utilize interactive charts to gain insights into income trends and distributions.
-
-- **Asset Tracking:**
-  - Track assets over time, including current and historical data.
-  - Monitor asset performance and changes using informative visualizations.
-
-- **Navigation:**
-  - Access different sections of the dashboard seamlessly through a user-friendly navigation bar.
-
-## Technologies Used
-
-- **React:** A popular JavaScript library for building interactive user interfaces.
-- **Chart.js:** A versatile charting library for creating interactive and customizable charts.
-- **FontAwesome:** A library of icons and symbols used to enhance the visual appeal of the dashboard.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-To get started with the Dashboard Project, follow these steps:
+First, run the development server:
 
-1. Clone the repository to your local machine.
-2. Install project dependencies using `npm install`.
-3. Start the development server with `npm start`.
-4. Access the dashboard in your web browser at `http://localhost:3000`.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Project Structure
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The project is organized as follows:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- **src/**
-  - **MainContent/**
-    - **Columns/**: Contains React components for different sections of the dashboard.
-      -**Column1/**
-      -**Column2/**
-  - **Navbar/**: Contains the navigation bar component.
-  - **Charts/**: Contains React components for rendering various charts.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Mock Data
+## Learn More
 
-Mock data is provided within the project to facilitate testing and demonstration purposes. This includes sample financial data and user account information.
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## License
+## Deploy on Vercel
 
-This project is licensed under the [License Name] License. See the [LICENSE](LICENSE) file for details.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
