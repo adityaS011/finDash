@@ -26,7 +26,7 @@ const FinancialPage: React.FC = () => {
   const totalPages = Math.ceil(transactionData.length / ROWS_PER_PAGE);
 
   useEffect(() => {
-    let data: TransactionData[] = generateMockTransactionData();
+    const data: TransactionData[] = generateMockTransactionData();
     setTransactionData(data);
   }, []);
 

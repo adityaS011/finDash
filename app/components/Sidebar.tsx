@@ -10,7 +10,6 @@ import {
   faHandHoldingUsd,
   faCog,
   faExclamationCircle,
-  faFile,
   faBars,
   faRectangleXmark, // Icon for toggling sidebar on mobile
 } from '@fortawesome/free-solid-svg-icons';
