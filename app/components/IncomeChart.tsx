@@ -31,7 +31,7 @@ const IncomeChart: React.FC<Props> = ({ financialData }) => {
         chartInstanceRef.current = new Chart(ctx, {
           type: 'line',
           data: {
-            labels: financialData.map((data) => data.label),
+            labels: financialData.map(() => ''),
             datasets: [
               {
                 data: [
