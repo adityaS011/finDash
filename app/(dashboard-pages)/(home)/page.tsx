@@ -1,4 +1,4 @@
-import Dashboard from '@/finDash/app/components/Dashboard';
+import Dashboard from '@/app/components/Dashboard';
 import React from 'react';
 
 const App = () => {

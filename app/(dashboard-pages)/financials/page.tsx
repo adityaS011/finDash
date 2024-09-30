@@ -1,7 +1,7 @@
 'use client';
-import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
-import Pagination from '@/finDash/app/components/Pagination';
-import TransactionCard from '@/finDash/app/components/TransactionCard';
+import BouncingLoader from '@/app/components/Loaders/BouncingLoader';
+import Pagination from '@/app/components/Pagination';
+import TransactionCard from '@/app/components/TransactionCard';
 import React, { useState, useEffect } from 'react';
 
 type TransactionData = {

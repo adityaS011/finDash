@@ -1,5 +1,5 @@
 'use client';
-import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
+import BouncingLoader from '@/app/components/Loaders/BouncingLoader';
 import React, { useEffect, useState } from 'react';
 
 const SettingsPage: React.FC = () => {

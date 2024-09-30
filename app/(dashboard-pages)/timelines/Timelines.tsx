@@ -1,6 +1,6 @@
 'use client';
-import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
-import YearFilter from '@/finDash/app/components/YearFilter';
+import BouncingLoader from '@/app/components/Loaders/BouncingLoader';
+import YearFilter from '@/app/components/YearFilter';
 import React, { useEffect, useState } from 'react';
 
 interface TimelineEvent {

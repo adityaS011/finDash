@@ -1,6 +1,6 @@
 'use client';
-import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
-import Pagination from '@/finDash/app/components/Pagination';
+import BouncingLoader from '@/app/components/Loaders/BouncingLoader';
+import Pagination from '@/app/components/Pagination';
 import React, { useState, useEffect } from 'react';
 
 interface ExpenseData {
