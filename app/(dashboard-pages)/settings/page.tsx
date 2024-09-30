@@ -1,8 +1,10 @@
 'use client';
-import React, { useState } from 'react';
+import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
+import React, { useEffect, useState } from 'react';
 
 const SettingsPage: React.FC = () => {
-  // State for each setting section
+  const [loading, setLoading] = useState(true);
+
   const [accountSettings, setAccountSettings] = useState({
     username: 'johndoe',
     email: 'johndoe@example.com',
@@ -41,6 +43,22 @@ const SettingsPage: React.FC = () => {
     }));
   };
 
+  // Simulate data fetching
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate a 2-second loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className='flex justify-center items-center h-screen'>
+        <BouncingLoader />
+      </div>
+    );
+  }
   return (
     <div className='w-full flex flex-row justify-center items-center mb-6'>
       <div className='px-6 py-8 w-[800px] bg-gray-200 min-h-screen '>

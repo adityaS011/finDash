@@ -1,5 +1,6 @@
 'use client';
-import Pagination from '@/app/components/Pagination';
+import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
+import Pagination from '@/finDash/app/components/Pagination';
 import React, { useState, useEffect } from 'react';
 
 interface VendorData {
@@ -29,6 +30,7 @@ const Directory: React.FC = () => {
 
   const ROWS_PER_PAGE = 10; // Number of rows per page
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   const totalPages = Math.ceil(vendorData.length / ROWS_PER_PAGE);
   const currentData = vendorData.slice(
@@ -44,6 +46,22 @@ const Directory: React.FC = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
+  // Simulate data fetching
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate a 2-second loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className='flex justify-center items-center h-screen'>
+        <BouncingLoader />
+      </div>
+    );
+  }
   return (
     <div className='px-4 md:px-12 pt-8 pb-10 w-full bg-gray-200 min-h-screen'>
       <h1 className='text-center text-3xl font-bold p-4 text-[#065f46]'>

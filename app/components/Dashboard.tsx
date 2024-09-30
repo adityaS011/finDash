@@ -1,9 +1,26 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import { financialData, mockAccounts } from './mockData';
-import Column1 from './Column1';
-import Column2 from './Column2';
+import Column1 from './Columns/Column1';
+import Column2 from './Columns/Column2';
+import HomePageLoader from './Loaders/HomePageLoader';
 
 const Dashboard: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+
+  // Simulate data fetching
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate a 2-second loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <HomePageLoader />;
+  }
+
   return (
     <div className='flex flex-col px-4 w-full  bg-gray-200 md:px-12 pt-8  no-scrollbar pb-10 overflow-x-hidden '>
       <h1 className='w-full text-xl font-medium p-2 mx-2  font-sans text-[#4b0034]'>

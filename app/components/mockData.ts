@@ -17,6 +17,7 @@ export const mockAccounts: Account[] = [
 export interface FinancialData {
   date: string;
   value: number;
+  label?: '';
 }
 
 export const financialData: FinancialData[] = [

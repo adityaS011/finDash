@@ -2,6 +2,7 @@
 import { usePathname, useRouter } from 'next/navigation'; // Import usePathname and useRouter
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
 import {
   faHome,
   faHistory,
@@ -10,8 +11,6 @@ import {
   faHandHoldingUsd,
   faCog,
   faExclamationCircle,
-  faBars,
-  faRectangleXmark, // Icon for toggling sidebar on mobile
 } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -28,7 +27,6 @@ const menuItems: MenuItem[] = [
   { icon: faMoneyBillWave, label: 'Payments', route: '/payments' },
   { icon: faAddressBook, label: 'Directory', route: '/directory' },
   { icon: faHandHoldingUsd, label: 'Financials', route: '/financials' },
-  //  { icon: faFile, label: 'Files', route: '/files' },
   { icon: faCog, label: 'Settings', route: '/settings' },
 ];
 
@@ -57,7 +55,7 @@ const Sidebar = () => {
       {/* Top Navbar for mobile */}
       <div className='md:hidden z-100 fixed top-0 left-0 right-0 border-b border-l  shadow-md bg-gray-200 text-gray-700 flex justify-between items-center p-4 z-40'>
         <Image src={'/logo.png'} alt='Fintech Logo' width={100} height={100} />
-        <button
+        {/*<button
           onClick={toggleSidebar}
           className='text-gray-700 focus:outline-none'
         >
@@ -66,7 +64,7 @@ const Sidebar = () => {
           ) : (
             <FontAwesomeIcon icon={faBars} size='lg' />
           )}
-        </button>
+        </button>*/}
       </div>
 
       {/* Sidebar for larger screens */}
@@ -91,7 +89,10 @@ const Sidebar = () => {
               className={`py-2 cursor-pointer ${getTextColor(item.route)}`} // Apply dynamic color
               onClick={() => handleNavigation(item.route)}
             >
-              <FontAwesomeIcon icon={item.icon} className='mr-2' /> {item.label}
+              <span className='icon-wrapper'>
+                <FontAwesomeIcon icon={item.icon} className='mr-2' />{' '}
+                {item.label}
+              </span>
             </li>
           ))}
         </ul>

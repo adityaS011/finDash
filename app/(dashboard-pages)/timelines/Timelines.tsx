@@ -1,6 +1,7 @@
 'use client';
-import YearFilter from '@/app/components/YearFilter';
-import React, { useState } from 'react';
+import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
+import YearFilter from '@/finDash/app/components/YearFilter';
+import React, { useEffect, useState } from 'react';
 
 interface TimelineEvent {
   date: string;
@@ -66,11 +67,29 @@ const years = Array.from(
 
 const Timelines: React.FC = () => {
   const [selectedYear, setSelectedYear] = useState<string>(years[0].toString());
+  const [loading, setLoading] = useState(true);
 
   // Filter events based on selected year
   const filteredEvents = mockTimelineData.filter((event) =>
     event.date.startsWith(selectedYear)
   );
+
+  // Simulate data fetching
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate a 2-second loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className='flex justify-center items-center h-screen'>
+        <BouncingLoader />
+      </div>
+    );
+  }
   return (
     <div className='flex flex-col px-4 md:px-12 pt-8 pb-10 w-full bg-gray-200 min-h-screen'>
       <h1 className='text-center text-3xl font-bold p-4 text-[#4b0034]'>
@@ -81,7 +100,7 @@ const Timelines: React.FC = () => {
         selectedYear={selectedYear}
         onSelectYear={setSelectedYear}
       />
-      <div className='relative mt-12 flex flex-col md:px-20'>
+      <div className='relative mt-6 flex flex-col md:px-20 bg-white px-4 pb-4 pt-8 rounded-lg overflow-hidden shadow-lg shadow-gray-300'>
         {/* Timeline Line */}
         <div className='absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300'></div>
 

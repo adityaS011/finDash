@@ -1,5 +1,6 @@
 'use client';
-import Pagination from '@/app/components/Pagination';
+import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
+import Pagination from '@/finDash/app/components/Pagination';
 import React, { useState, useEffect } from 'react';
 
 interface ExpenseData {
@@ -18,9 +19,13 @@ const generateMockData = () => {
 
 const Payment: React.FC = () => {
   const [mockExpenseData, setMockExpenseData] = useState<ExpenseData[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // Use useEffect to generate data only on the client side
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
     const data = generateMockData();
     setMockExpenseData(data);
   }, []);
@@ -42,6 +47,13 @@ const Payment: React.FC = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
+  if (loading) {
+    return (
+      <div className='flex justify-center items-center h-screen'>
+        <BouncingLoader />
+      </div>
+    );
+  }
   return (
     <div className='px-4 md:px-12 pt-8 pb-10 w-full bg-gray-200 min-h-screen'>
       <h1 className='text-center text-3xl font-bold p-4 text-[#065f46]'>

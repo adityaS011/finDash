@@ -9,7 +9,7 @@ import {
   faCheckSquare,
   faSquare,
 } from '@fortawesome/free-solid-svg-icons';
-import { Account } from './mockData';
+import { Account } from '../mockData';
 import Image from 'next/image';
 
 interface Props {
@@ -43,38 +43,39 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
   };
 
   return (
-    <div className='w-full gap-4 px-3  flex flex-row md:flex-col md:w-fit'>
-      <div className='bg-white px-4 py-3 rounded-lg border-1 h-fit w-fit md:w-56 shadow-lg'>
-        <h2 className='text-lg px-2 pt-2 font-semibold'>Your Accounts</h2>
-        <div className='flex flex-col py-3  mt-2 w-fit '>
+    <div className='w-full gap-4 px-3  flex flex-col  md:w-fit'>
+      <div className='bg-white px-4 py-3 rounded-lg border-1 h-fit w-full  md:w-56 shadow-lg'>
+        <h2 className='text-lg px-2 pt-2 font-semibold '>Your Accounts</h2>
+        <div className='flex flex-col py-3  md:mt-2 w-full md:w-fit '>
           {mainAccounts.map((mainAccount) => (
             <div key={mainAccount.id}>
-              <div className='flex flex-row gap-0 w-fit px-2 '>
-                <Image
-                  src={'/user.png'}
-                  alt='User'
-                  width={100}
-                  height={100}
-                  className='w-fit h-8 p-0 rounded-full '
-                />
-                <Image
-                  src={'/user.png'}
-                  alt='User'
-                  width={100}
-                  height={100}
-                  className='w-fit p-0 -ml-7 h-8 rounded-full '
-                />
-                <Image
-                  src={'/user.png'}
-                  alt='User'
-                  width={100}
-                  height={100}
-                  className='w-fit p-0 -ml-7 h-8 rounded-full  '
-                />
-
-                <div className='pl-4 '>
+              <div className='flex flex-row gap-0  md:px-2 justify-evenly'>
+                <div className='flex flex-row'>
+                  <Image
+                    src={'/user.png'}
+                    alt='User'
+                    width={100}
+                    height={100}
+                    className='w-fit h-12 md:h-8 p-0 rounded-full '
+                  />
+                  <Image
+                    src={'/user.png'}
+                    alt='User'
+                    width={100}
+                    height={100}
+                    className='w-fit p-0 -ml-7 h-12 md:h-8 rounded-full '
+                  />
+                  <Image
+                    src={'/user.png'}
+                    alt='User'
+                    width={100}
+                    height={100}
+                    className='w-fit p-0 -ml-7 h-12 md:h-8 rounded-full  '
+                  />
+                </div>
+                <div className='md:pl-4 '>
                   <p
-                    className='text-xs text-gray-500 flex cursor-pointer'
+                    className='text-xs text-gray-500 flex flex-row items-center cursor-pointer'
                     onClick={() => toggleExpansion(mainAccount.id)}
                   >
                     Bank Balance
@@ -84,7 +85,7 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
                           ? faArrowUp
                           : faAngleDown
                       }
-                      className='text-gray-400 pt-1 pl-1 w-2'
+                      className='text-gray-400 pl-1 w-2'
                     />
                   </p>
                   <p className='text-2xl font-bold'>
@@ -124,8 +125,8 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
           ))}
         </div>
       </div>
-      <div className='text-xl bg-white px-4 py-3 rounded-lg border-1 shadow-lg font-semibold'>
-        Assignment Tasks
+      <div className='md:text-xl text-base bg-white px-4 py-3 rounded-lg border-1 shadow-lg font-semibold'>
+        Pending Tasks
         <div
           className='mt-6 flex items-center cursor-pointer'
           onClick={() => toggleTask('menuSidebar')}
@@ -133,10 +134,10 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
           <FontAwesomeIcon
             icon={tasks.menuSidebar ? faCheckSquare : faSquare}
             className={`mr-2 ${
-              tasks.menuSidebar ? 'text-green-500' : 'text-gray-400'
+              tasks.menuSidebar ? 'text-green-500' : 'text-gray-300'
             }`}
           />
-          <p className='text-sm'>Menu/SideBar</p>
+          <p className='text-sm'>Reimburstments</p>
         </div>
         <div
           className='mt-3 flex items-center cursor-pointer'
@@ -145,10 +146,10 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
           <FontAwesomeIcon
             icon={tasks.businessSection ? faCheckSquare : faSquare}
             className={`mr-2 ${
-              tasks.businessSection ? 'text-green-500' : 'text-gray-400'
+              tasks.businessSection ? 'text-green-500' : 'text-gray-300'
             }`}
           />
-          <p className='text-sm'>Account/Business Section</p>
+          <p className='text-sm'>GSTIN Filing</p>
         </div>
         <div
           className='mt-3 flex items-center cursor-pointer'
@@ -157,10 +158,10 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
           <FontAwesomeIcon
             icon={tasks.graph ? faCheckSquare : faSquare}
             className={`mr-2 ${
-              tasks.graph ? 'text-green-500' : 'text-gray-400'
+              tasks.graph ? 'text-green-500' : 'text-gray-300'
             }`}
           />
-          <p className='text-sm'>Graph</p>
+          <p className='text-sm'>Office Rent</p>
         </div>
         <div
           className='mt-3 flex items-center cursor-pointer'
@@ -172,7 +173,7 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
               tasks.graphHover ? 'text-green-500' : 'text-gray-300'
             }`}
           />
-          <p className='text-sm'>Graph Hover</p>
+          <p className='text-sm'>Testing Dept. Salaries</p>
         </div>
         <div
           className='mt-3 flex items-center cursor-pointer'
@@ -184,7 +185,7 @@ const Column1: React.FC<Props> = ({ mainAccounts }) => {
               tasks.dropdownAccount ? 'text-green-500' : 'text-gray-300'
             }`}
           />
-          <p className='text-sm'>Dropdown on Account</p>
+          <p className='text-sm'>Clound Bills</p>
         </div>
       </div>
     </div>

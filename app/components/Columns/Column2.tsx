@@ -7,8 +7,8 @@ import {
   faInfoCircle,
   faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
-import { FinancialData } from './mockData';
-import IncomeChart from './IncomeChart';
+import { FinancialData } from '../mockData';
+import IncomeChart from '../IncomeChart';
 
 interface Props {
   financialData: FinancialData[];

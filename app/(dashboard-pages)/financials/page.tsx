@@ -1,6 +1,7 @@
 'use client';
-import Pagination from '@/app/components/Pagination';
-import TransactionCard from '@/app/components/TransactionCard';
+import BouncingLoader from '@/finDash/app/components/Loaders/BouncingLoader';
+import Pagination from '@/finDash/app/components/Pagination';
+import TransactionCard from '@/finDash/app/components/TransactionCard';
 import React, { useState, useEffect } from 'react';
 
 type TransactionData = {
@@ -21,6 +22,7 @@ const generateMockTransactionData = (): TransactionData[] => {
 
 const FinancialPage: React.FC = () => {
   const [transactionData, setTransactionData] = useState<TransactionData[]>([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const ROWS_PER_PAGE = 8;
   const totalPages = Math.ceil(transactionData.length / ROWS_PER_PAGE);
@@ -43,6 +45,22 @@ const FinancialPage: React.FC = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
+  // Simulate data fetching
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate a 2-second loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className='flex justify-center items-center h-screen'>
+        <BouncingLoader />
+      </div>
+    );
+  }
   return (
     <div className='px-6 py-8 w-full bg-gray-200 min-h-screen'>
       <h1 className='text-center text-4xl font-bold mb-8 text-green-700'>
