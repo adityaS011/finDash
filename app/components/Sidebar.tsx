@@ -1,8 +1,6 @@
 'use client';
 import { usePathname, useRouter } from 'next/navigation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Image from 'next/image';
 import { ReactNode, useState } from 'react';
 import {
   CircleExclamationIcon,
