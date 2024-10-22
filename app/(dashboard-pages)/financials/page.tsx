@@ -62,7 +62,7 @@ const FinancialPage: React.FC = () => {
     );
   }
   return (
-    <div className='px-6 py-8 w-full bg-gray-200 min-h-screen'>
+    <div className='mt-6 md:mt-2 px-6 py-8 w-full bg-gray-200 min-h-screen'>
       <h1 className='text-center text-4xl font-bold mb-8 text-green-700'>
         Financial Overview
       </h1>

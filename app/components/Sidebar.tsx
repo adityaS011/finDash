@@ -71,7 +71,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Top Navbar for mobile */}
-      <div className='md:hidden z-100 fixed top-0 left-0 right-0 border-b border-l  shadow-md bg-[#ecfae5] text-gray-700 flex justify-between items-center p-4 z-40'>
+      <div className='md:hidden z-100 fixed top-0 mb-2 left-0 right-0 border-b border-l  shadow-md bg-[#ecfae5] text-gray-700 flex justify-between items-center p-4 z-40'>
         <LogoIcon className='w-7 h-7 rounded-full' />{' '}
         <p className=' text-gray-600 font-sans tracking-wide uppercase text-lg font-semibold '>
           Finance Repo

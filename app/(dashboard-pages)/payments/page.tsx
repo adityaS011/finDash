@@ -55,7 +55,7 @@ const Payment: React.FC = () => {
     );
   }
   return (
-    <div className='px-4 md:px-12 pt-8 pb-10 w-full bg-gray-200 min-h-screen'>
+    <div className=' px-4 md:px-12 pt-8 pb-10 w-full bg-gray-200 min-h-screen'>
       <h1 className='text-center text-3xl font-bold p-4 text-[#065f46]'>
         Payments
       </h1>

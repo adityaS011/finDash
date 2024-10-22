@@ -9,14 +9,14 @@ const HomePageLoader = () => {
       <div className='mt-2 flex flex-col md:flex-row w-full gap-6'>
         <div className='flex flex-col gap-3'>
           <div className='w-[250px] gap-3 mb-5 shadow-xl border-1 rounded-md animate-pulse bg-white p-4'>
-            <div className='h-8 bg-gray-400 rounded w-3/4 mb-2'></div>
-            <div className='h-6 bg-gray-400 rounded w-full mb-2'></div>
-            <div className='h-6 bg-gray-400 rounded w-full mb-2'></div>
+            <div className='h-8 bg-[#dfdede] rounded w-3/4 mb-2'></div>
+            <div className='h-6 bg-[#dfdede] rounded w-full mb-2'></div>
+            <div className='h-6 bg-[#dfdede] rounded w-full mb-2'></div>
           </div>
           <div className='w-[250px] gap-3 mb-5 shadow-xl border-1 rounded-md animate-pulse bg-white p-4'>
-            <div className='h-8 bg-gray-400 rounded w-3/4 mb-2'></div>
-            <div className='h-6 bg-gray-400 rounded w-full mb-2'></div>
-            <div className='h-6 bg-gray-400 rounded w-full mb-2'></div>
+            <div className='h-8 bg-[#dfdede] rounded w-3/4 mb-2'></div>
+            <div className='h-6 bg-[#dfdede] rounded w-full mb-2'></div>
+            <div className='h-6 bg-[#dfdede] rounded w-full mb-2'></div>
           </div>
         </div>
 
@@ -30,8 +30,8 @@ const HomePageLoader = () => {
                 key={index}
                 className='flex-1 bg-white p-4 shadow-md border-1 rounded-md animate-pulse mx-2 mb-2'
               >
-                <div className='h-6 bg-gray-400 rounded w-full mb-2'></div>
-                <div className='h-4 bg-gray-400 rounded w-3/4 mb-2'></div>
+                <div className='h-6 bg-[#dfdede] rounded w-full mb-2'></div>
+                <div className='h-4 bg-[#dfdede] rounded w-3/4 mb-2'></div>
               </div>
             ))}
           </div>
