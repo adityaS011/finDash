@@ -82,7 +82,7 @@ const Sidebar = () => {
       <div
         className={`${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:translate-x-0 transition-transform fixed md:relative top-1 left-0 h-screen overflow-hidden bg-gray-200 text-gray-700 w-52 px-4 py-2 z-40`}
+        } md:translate-x-0 transition-transform border-r border-gray-400 fixed md:relative top-1 left-0 h-screen overflow-hidden bg-gray-200 text-gray-700 w-52 px-4 py-2 z-40`}
       >
         <div className='rounded-3xl border border-[#efeaea] shadow bg-[#ecfae5] flex w-40 h-12 p-2 mt-2 mb-4 gap-2 hover:translate-x-[-1px] hover:translate-y-[-1px] cursor-pointer'>
           <LogoIcon className='w-7 h-7 rounded-full' />
